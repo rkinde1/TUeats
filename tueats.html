@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Rose Kinder -->
+        <title>TUeats</title>
+        <link rel="stylesheet" href="tueats.css">
+        <script>
+            function formValidator() {
+                var password1 = document.getElementById("password1");
+                var password2 = document.getElementById("password2");
+                var referral = document.getElementById("referral");
+                var username = document.getElementById("username").value;
+                var checkbox = document.getElementById("checkbox");
+                var email = document.getElementById("email");
+                if (referral.value == "tucis" || referral.value =="bogo" || referral.value =="eatgood") {
+                    alert("invalid referral code");
+                    return false;
+                }
+                if (username.length < 6) {
+                    alert("Username must be at least more than 6 characters");
+                    return false;
+                }
+                if (username.length > 24) {
+                    alert("Username must be less than 24 characters");
+                    return false;
+                }
+
+                if (password1.value != password2.value) {
+                    alert("Please ensure that passwords match");//Password does not match
+                    return false;
+                }
+                else if (password1.value == password2.value) {
+                    return true;
+                }
+
+            }
+
+            function referralChecker() {
+                var referral = document.getElementById("referral");
+                if (referral.value.toUpperCase() == "TUCIS" || referral.value.toUpperCase() =="BOGO" || referral.value.toUpperCase() =="EATGOOD") {
+                    document.getElementById("display").innerHTML = "Invalid referral code";
+                }
+                else {
+                    document.getElementById("display").innerHTML = "";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Welcome to TU Eats</h1>
+        <form method="GET" action="tueats_completed.html" onsubmit="return formValidator();">
+            <fieldset>
+            <legend>Sign up</legend>
+            <!-- Lauren Castella from Towson PhotoShelter -->
+            <img src="Glen_Dining_Hall.jpg" width="45%" height="35%">
+            <p>Please enter your username and email</p>
+            <input type="text" placeholder="username" name="username" id="username"><br>
+            <input type="email" placeholder="email" name="email" id="email"><br>
+            <label>Referral Code</label><input type="text" name="referral" placeholder="referral code" id="referral" oninput="return referralChecker();"><br>
+            <p id="display"></p>
+            <label>Password:</label><input type="password" name="password1" placeholder="password" id="password1"><br>
+            <label>Please verify password:</label><input type="password" name="password2" placeholder="password" id="password2"><br>
+            <label>Sign up for our newsletter?</label>
+            <input type="checkbox" name="checkbox" id="checkbox">
+            <br>
+            <input type="submit">
+            </fieldset>
+        </form>
+        <fieldset>
+        <table>
+            <caption>Menu is suject to change, please visit our <a href="https://www.towson.edu/">main site</a> for more information</caption>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Calories</th>
+            </tr>
+            <tr>
+                <td>item 1</td>
+                <td>Burger</td>
+                <td>$8</td>
+                <td>550</td>
+            </tr>
+            <tr>
+                <td>item 2</td>
+                <td>Mozzerella Sticks</td>
+                <td>$7</td>
+                <td rowspan="2">400</td>
+            </tr>
+            <tr>
+                <td>item 3</td>
+                <td>Fries</td>
+                <td>$4</td>
+            </tr>
+        </table>
+        </fieldset>
+    </body>
+</html>

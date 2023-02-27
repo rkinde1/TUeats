@@ -1,0 +1,34 @@
+th {
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+table {
+    width: 75%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: #808080;
+}
+
+
+td {
+    border: 1px solid black;
+}
+
+h1 {
+    color: #FFBB00;
+}
+
+img {
+    border-radius: 8px;
+    float: right;
+}
+
+A:hover {
+    color: #FFBB00;
+}
+
+#display {
+    color: red;
+}

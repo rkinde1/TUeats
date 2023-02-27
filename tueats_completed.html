@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Rose Kinder -->
+        <title>Welcome to TUEats</title>
+        <script>
+            let searchParams = new URLSearchParams(window.location.search);
+            function referralCode (){
+                if (searchParams.get("referral") != "")
+                    document.write(searchParams.get("referral") + " (free meal)"); 
+                else 
+                    document.write("No referral code entered");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Welcome to TU Eats</h1>
+        <ul>
+            <li><label>Hello: </label><script>document.write(searchParams.get('username'));</script></li>
+            <li><label>Email: </label><script>document.write(searchParams.get('email'));</script></li>
+            <li><label>Password: </label><script>document.write(searchParams.get('password1'));</script></li>
+            <li><label>Password Verify: </label><script>document.write(searchParams.get('password2'));</script></li>
+            <li><label>Checkbox: </label><script>document.write(searchParams.get('checkbox'));</script></li>
+            <li><label>Referral Code: </label><script>referralCode();</script></li>
+        </ul>
+    </body>
+</html>
